@@ -1,0 +1,12 @@
+{
+      "/api": {
+        "target": "https://storeapi.six-dots.app",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+          "^/api": ""
+        },
+        "logLevel": "debug"
+      }
+    }
+    
