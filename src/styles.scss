@@ -1,0 +1,48 @@
+// Variables de couleur pour le thème
+$primary: #b52e31; // Rouge Angular
+$dark: #000; // Noir
+$light: #fff; // Blanc
+
+// Personnalisation des variables Bootstrap
+$theme-colors: (
+  "primary": $primary,
+  "dark": $dark,
+  "light": $light
+);
+
+// Importation de Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+
+// Styles supplémentaires ou personnalisations
+body {
+  background-color: $light;
+  color: $dark;
+  font-family: 'Arial', sans-serif;
+}
+
+a {
+  color: $primary;
+  
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+nav {
+  background-color: $primary;
+  color: $light;
+
+  .nav-link {
+    color: $light;
+    
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
+}
+
+footer {
+  background-color: $dark;
+  color: $light;
+}

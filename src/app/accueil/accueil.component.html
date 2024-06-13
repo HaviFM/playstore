@@ -1,0 +1,36 @@
+<!-- accueil.component.html -->
+<div class="container mt-5">
+  <div class="row">
+    <!-- Section Titre -->
+    <div class="col-12 mb-4">
+      <h1 class="text-center text-primary">
+        Bienvenue dans notre univers de développement !
+      </h1>
+      <p class="text-secondary text-center">
+        Rencontrez l'équipe qui transforme les idées en réalités ludiques.
+      </p>
+    </div>
+
+    <!-- Carte pour chaque développeur -->
+    <div class="col-md-6 col-lg-3 mb-4" *ngFor="let dev of developers">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ dev.name }}</h5>
+          <p class="card-text">{{ dev.role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section du Projet -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h2 class="text-center text-info">Notre Projet</h2>
+      <p class="text-center">
+        Explorez notre application qui trie intelligemment les jeux disponibles
+        sur Steam, vous aidant à trouver les meilleurs jeux selon vos
+        préférences.
+      </p>
+    </div>
+  </div>
+</div>

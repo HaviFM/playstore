@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { JsonPipe, CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-application',
   standalone: true,
@@ -14,8 +15,8 @@ export class ApplicationComponent {
   service: ServiceService = inject(ServiceService);
   applis: any;
 
-  afficherApplis(){
-    this.service.getApplis().subscribe(data => {
+  afficherApplis(steamRatingPercent: string, upperPrice: string, lowerPrice: string, sortBy: string){
+    this.service.getApplis(steamRatingPercent , upperPrice, lowerPrice, sortBy).subscribe(data => {
       this.applis = data;
       console.log(data);
   }, 

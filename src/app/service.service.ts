@@ -8,12 +8,12 @@ import { Observable, map } from 'rxjs';
 export class ServiceService {
 
   http: HttpClient = inject(HttpClient);
-  private UrlApplis: string = 'https://www.cheapshark.com/api/1.0/deals?storeID=1&steamRating=90&upperPrice=15'; 
+  private UrlApplis: string = 'https://www.cheapshark.com/api/1.0/deals?storeID=1'; 
   constructor() { }
 
 
-  getApplis():Observable<any>{
-    return this.http.get(this.UrlApplis).pipe(map(
+  getApplis(steamRatingPercent: string, upperPrice: string, lowerPrice: string, sortBy : string):Observable<any>{
+    return this.http.get(`${this.UrlApplis}&steamRating=${steamRatingPercent}&upperPrice${upperPrice}&lowerPrice=${lowerPrice}&sortBy=${sortBy}`).pipe(map(
       (data: any) =>{
         return data;
       }
