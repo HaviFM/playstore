@@ -1,19 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ApplicationComponent } from './application/application.component';
+import { JsonPipe, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ApplicationComponent],
+  imports: [RouterOutlet, ApplicationComponent, JsonPipe, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss' ,
 })
+
 export class AppComponent {
   title = 'playstore';
-  public menuOpen = false;
-
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
   }
-}
+

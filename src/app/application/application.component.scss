@@ -1,0 +1,97 @@
+// Define colors and fonts as SCSS variables for easier re-use and maintenance
+$colors: (
+  "blue": #0d6efd,
+  "indigo": #6610f2,
+  "purple": #6f42c1,
+  "pink": #d63384,
+  "red": #dc3545,
+  "orange": #fd7e14,
+  "yellow": #ffc107,
+  "green": #198754,
+  "teal": #20c997,
+  "cyan": #0dcaf0,
+  "black": #000,
+  "white": #fff,
+  "gray": #6c757d,
+  "gray-dark": #343a40,
+  "gray-100": #f8f9fa,
+  "gray-200": #e9ecef,
+  "gray-300": #dee2e6,
+  "gray-400": #ced4da,
+  "gray-500": #adb5bd,
+  "gray-600": #6c757d,
+  "gray-700": #495057,
+  "gray-800": #343a40,
+  "gray-900": #212529
+);
+
+/*$fonts: (
+  "sans-serif": system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
+  "monospace": SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+);*/
+
+// Base styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Media query for smooth scrolling
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+// Body styles
+body {
+  margin: 0;
+  //font-family: map-get($fonts, "sans-serif");
+  font-size: 1rem; // Adjust based on your previous :root declaration if needed
+  font-weight: 400;
+  line-height: 1.5;
+  color: map-get($colors, "gray-900");
+  text-align: left; // Ensure you set this based on your actual use case
+  background-color: map-get($colors, "white");
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Reset for horizontal rules
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  border: 0;
+  border-top: 1px solid;
+  opacity: 0.25;
+}
+
+// Heading styles
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1, .h1 {
+  font-size: calc(1.375rem + 1.5vw);
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
+  }
+}
+
+h2, .h2 {
+  font-size: calc(1.325rem + 0.9vw);
+  @media (min-width: 1200px) {
+    font-size: 2rem;
+  }
+}
+
+h3, .h3 {
+  font-size: calc(1.3rem + 0.6vw);
+  @media (min-width: 1200px) {
+    font-size: 1.75rem;
+  }
+}

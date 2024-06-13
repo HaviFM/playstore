@@ -23,5 +23,5 @@ export class ApplicationComponent {
     console.error('There was an error!', error);
    
   });
-}
+  }
 }
