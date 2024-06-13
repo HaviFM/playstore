@@ -11,4 +11,9 @@ import { ApplicationComponent } from './application/application.component';
 })
 export class AppComponent {
   title = 'playstore';
+  public menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }

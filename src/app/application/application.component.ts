@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ServiceService } from '../service.service';
-import { JsonPipe } from '@angular/common';
+import { JsonPipe, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-application',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [JsonPipe, CommonModule],
   templateUrl: './application.component.html',
   styleUrl: './application.component.scss'
 })

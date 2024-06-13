@@ -1,3 +1,9 @@
-<p>application works!</p>
+
 
 <button (click) = "afficherApplis()">afficher appli</button>
+
+<ul>
+    <li *ngFor="let jeu of applis">
+        {{jeu.title}}
+    </li>
+</ul>

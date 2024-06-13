@@ -8,7 +8,7 @@ import { Observable, map } from 'rxjs';
 export class ServiceService {
 
   http: HttpClient = inject(HttpClient);
-  private UrlApplis: string = '/api/last_updated_100';
+  private UrlApplis: string = 'https://www.cheapshark.com/api/1.0/deals?storeID=1&steamRating=90&upperPrice=15';
   constructor() { }
 
 
