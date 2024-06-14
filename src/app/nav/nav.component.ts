@@ -6,7 +6,7 @@ import { Injectable, inject } from '@angular/core';
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive,],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss'
 })
@@ -15,8 +15,8 @@ export class NavComponent {
   service: ServiceService = inject(ServiceService);
   applis: any;
 
-  rechercher(title: string){
-    this.service.rechercher(title).subscribe(data => {
+  rechercher(title: any){
+    this.service.getRecherche(title).subscribe(data => {
       this.applis = data;
       console.log(data);
     })

@@ -46,3 +46,33 @@ footer {
   background-color: $dark;
   color: $light;
 }
+.logo-responsive {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .logo-responsive {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 992px) {
+  .logo-responsive {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-responsive {
+    max-width: 75px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-responsive {
+    max-width: 60px;
+  }
+}
+

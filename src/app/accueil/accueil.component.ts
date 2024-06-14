@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-accueil',
+  selector: '',
   standalone: true,
   imports: [NavComponent,CommonModule],
   templateUrl: './accueil.component.html',
@@ -13,9 +13,9 @@ import { CommonModule } from '@angular/common';
 })
 export class AccueilComponent {
   developers = [
-    { name: 'Mathieu', role: 'Developpeur' },
-    { name: 'Salah', role: 'Developpeur' },
-    { name: 'Jossua', role: ' Developpeur' },
-    { name: 'Florian', role: 'Developpeur' }
+    { name: 'Mathieu', role: 'Developpeur - API Final Boss' },
+    { name: 'Salah', role: 'Developpeur - Hardcore Maquettiste' },
+    { name: 'Jossua', role: ' Developpeur - Route Master' },
+    { name: 'Florian', role: 'Developpeur- Level Designer' }
   ];
 }

@@ -7,6 +7,8 @@ import { Observable, map } from 'rxjs';
 })
 export class ServiceService {
 
+  //constructor(){ }
+
   http: HttpClient = inject(HttpClient);
   private UrlApplis: string = 'https://www.cheapshark.com/api/1.0/deals?storeID=1'; 
   constructor() { }
@@ -21,10 +23,11 @@ export class ServiceService {
   }
 
 
-  rechercher(title: string):Observable<any>{
+  getRecherche(title: any):Observable<any>{
     return this.http.get(`${this.UrlApplis}&${title}`).pipe(map(
       (data: any) =>{
         return data;
+        console.log(data);
       }
     ));
   }
