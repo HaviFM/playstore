@@ -18,7 +18,7 @@ export class ApplicationComponent {
   afficherApplis(steamRatingPercent: string, upperPrice: string, lowerPrice: string, sortBy: string){
     this.service.getApplis(steamRatingPercent , upperPrice, lowerPrice, sortBy).subscribe(data => {
       this.applis = data;
-      console.log(data);
+      //console.log(data);
   }, 
   error => {
     console.error('There was an error!', error);

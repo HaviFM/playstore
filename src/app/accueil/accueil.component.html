@@ -3,33 +3,44 @@
   <div class="row">
     <!-- Section Titre -->
     <div class="col-12 mb-4">
-      <h1 class="text-center text-primary">
-        Bienvenue dans notre univers de développement !
+      <div style="justify-content: center; display: flex;" ><img src="pigeongular.png" alt="logo" style="width: 250px;"></div>
+      <h1 class="text-center text-info">
+        Bienvenue dans Pigeongular !
       </h1>
       <p class="text-secondary text-center">
-        Rencontrez l'équipe qui transforme les idées en réalités ludiques.
+        L'équipe qui transforme les idées en réalités ludiques.
       </p>
     </div>
 
     <!-- Carte pour chaque développeur -->
+    <div class="col-12">
+      <div class="row">
     <div class="col-md-6 col-lg-3 mb-4" *ngFor="let dev of developers">
-      <div class="card h-100">
+      <div class="card h-100 text-center shadow">
         <div class="card-body">
-          <h5 class="card-title">{{ dev.name }}</h5>
+          <h5 class="card-title">
+            <i class="fas fa-user-astronaut text-info"></i> {{ dev.name }}
+          </h5>
           <p class="card-text">{{ dev.role }}</p>
+          <p class="card-text">
+            <i class="fas fa-gamepad text-success"></i> Passionné de jeux
+          </p>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 
   <!-- Section du Projet -->
   <div class="row mt-4">
-    <div class="col-12">
-      <h2 class="text-center text-info">Notre Projet</h2>
-      <p class="text-center">
-        Explorez notre application qui trie intelligemment les jeux disponibles
-        sur Steam, vous aidant à trouver les meilleurs jeux selon vos
-        préférences.
+    <div class="col-12" style="display: flex; flex-direction: column;">
+      <h2 class="text- text-info text-center">Notre Projet</h2>
+      <p class="text-left-justify" style="flex-wrap: nowrap;">
+        Découvrez Pigeongular, l'application qui vous permet de ne plus vous faire pigeonner par les algorithmes de présentation personnalisés des offres Steam.
+      </p>
+      <p class="text-left-justify">
+       Laissez nos pigeons filtrer les offres pour vous, sans la peur d'être exposé aux méthodes marketing de Steam.
       </p>
     </div>
   </div>

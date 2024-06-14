@@ -20,4 +20,13 @@ export class ServiceService {
     ));
   }
 
+
+  rechercher(title: string):Observable<any>{
+    return this.http.get(`${this.UrlApplis}&${title}`).pipe(map(
+      (data: any) =>{
+        return data;
+      }
+    ));
+  }
+
 }

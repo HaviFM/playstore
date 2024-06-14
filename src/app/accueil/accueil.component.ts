@@ -13,9 +13,9 @@ import { CommonModule } from '@angular/common';
 })
 export class AccueilComponent {
   developers = [
-    { name: 'Mathieu', role: 'Developer' },
-    { name: 'Salah', role: 'Developer' },
-    { name: 'Jossua', role: ' Developer' },
-    { name: 'Florian', role: 'Developer' }
+    { name: 'Mathieu', role: 'Developpeur' },
+    { name: 'Salah', role: 'Developpeur' },
+    { name: 'Jossua', role: ' Developpeur' },
+    { name: 'Florian', role: 'Developpeur' }
   ];
 }
