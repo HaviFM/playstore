@@ -21,7 +21,7 @@ export class RechercheComponent {
   service: ServiceService = inject(ServiceService);
   applis: any;
   title: string = "" ;
-  paragraphe: string = "test";
+  paragraphe: string = "";
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -35,7 +35,8 @@ export class RechercheComponent {
     this.service.getRecherche(title).subscribe(data => {
       console.log(data);
       this.applis = data;
-      this.paragraphe = title;
+      this.paragraphe = "Résultat de votre recherche pour : " + title;
+ 
   }, 
   error => {
     console.error('There was an error!', error);

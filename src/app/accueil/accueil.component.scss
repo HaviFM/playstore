@@ -3,7 +3,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       &:hover {
         transform: scale(1.15);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.229);
       }
     }
     
@@ -12,18 +12,22 @@
     }
     
     .text-info {
-      color: #8D3134 !important;
+      color: #ffffff !important;
+      margin-bottom: 20px;
+      justify-content: center;
     }
     
-    .text-success {
-      color: #28a745 !important;
+    .text-secondary {
+      color: #ffffff !important;
+      font-size: large;
     }
     
     .shadow {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .text-left-justify {
-      text-align: left;
-      margin: 0 auto;
+      text-align: center;
+      color: #ffffff;
+      font-size: large;
     }
   

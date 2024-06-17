@@ -1,40 +1,38 @@
-
-
-
-
-
-
-
-
-
-<section class="component-background-animation py-5">
-    <div [innerHTML]="paragraphe" class="container px-4 px-lg-5 mt-5"></div>
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5" *ngFor="let jeu of applis">
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="{{jeu.thumb.substring(0,67)}}{{jeu.steamAppID}}/header.jpg" alt="..." />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">{{jeu.title}}</h5>
-                            <!-- Product price-->
-                            <p>{{jeu.salePrice}} €</p>
+<div  style="padding-top: 100px;">
+    
+    
+    <section class="component-background-animation py-5">
+        <div [innerHTML]="paragraphe" class="container px-4 px-lg-5 mt-5 cible_recherche"></div>
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5" *ngFor="let jeu of applis">
+                    <div class="card h-100" ><a href="https://www.metacritic.com{{jeu.metacriticLink}}" target="_blank" >
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{{jeu.thumb.substring(0,67)}}{{jeu.steamAppID}}/header.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">{{jeu.title}}</h5>
+                                <!-- Product price-->
+                                <p>{{jeu.salePrice}} €</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://store.steampowered.com/app/{{jeu.steamAppID}}" target="_blank">Acheter sur Steam</a></div>
-                    </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://store.steampowered.com/app/{{jeu.steamAppID}}" target="_blank">Acheter sur Steam</a></div>
+    
+                        </div>
+                    </a></div>
                 </div>
+    
             </div>
-
         </div>
+    </section>
+    
+    
+    <!-- <div *ngIf="applis && applis.length === 0"> fonctionnerait aussi pour éviter de lire length tant que applis est undefined -->
+    <div class="error_message" *ngIf="applis?.length === 0">
+        <p>Aucun jeu trouvé.</p>
     </div>
-</section>
-
-<div *ngIf="applis.length === 0">
-    <p>Aucun jeu trouvé.</p>
 </div>

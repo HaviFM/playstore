@@ -14,7 +14,7 @@
 
 // Section des boutons
 .button-section {
-  background-color: $background;
+  background-color: rgba(0, 0, 0, 0.196);
   color: #e9ecef;
   padding: 20px 0;
 
@@ -32,29 +32,32 @@
   font-size: 1.1em;
   padding: 10px 20px;
   border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
   display: inline-block;
   animation: fadeInUp 0.5s ease-in-out;
   animation-fill-mode: both; // Assure que l'animation reste appliquée après son exécution
 
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
   &.btn-primary {
-    background-color: $primary;
-    border-color: $primary;
-    color: white;
+    background-color: rgb(208, 8, 8);
+    color: rgb(255, 255, 255);
 
     &:hover {
-      background-color: darken($primary, 10%);
-      border-color: darken($primary, 15%);
+      background-color: rgb(255, 255, 255);
+      color: rgb(208, 8, 8);
     }
   }
 
   &.btn-outline-dark {
-    border-color: $dark;
-    color: $dark;
+    color: white;
 
     &:hover {
       background-color: $dark;
-      color: $light;
+      color: white;
     }
   }
 }
@@ -73,11 +76,11 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
   animation: fadeInUp 0.5s ease-in-out;
-  animation-fill-mode: both; // Assure que l'animation reste appliquée après son exécution
+ // animation-fill-mode: both; // Assure que l'animation reste appliquée après son exécution
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   }
 
   .card-img-top {
@@ -126,4 +129,14 @@ section {
       animation-fill-mode: both; // Assure que l'animation reste appliquée après son exécution
     }
   }
+}
+
+.section_actuelle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
 }

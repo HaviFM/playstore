@@ -16,13 +16,13 @@ export class ApplicationComponent {
 
   service: ServiceService = inject(ServiceService);
   applis: any;
-  paragraphe: string = "test";
+  paragraphe: string = "";
 
   afficherApplis(steamRatingPercent: string, upperPrice: string, lowerPrice: string, sortBy: string, id: string,){
     this.service.getApplis(steamRatingPercent , upperPrice, lowerPrice, sortBy).subscribe(data => {
       this.applis = data;
       console.log(id);
-      this.paragraphe = id;
+      this.paragraphe =  id;
 
   }, 
   error => {

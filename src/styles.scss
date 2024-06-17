@@ -2,7 +2,7 @@
 $primary: #b52e31; // Rouge Angular
 $dark: #000; // Noir
 $background: #b7b7b7;
-$light:#6a6a6a;
+$light:#b5b5b5;
 
 // Personnalisation des variables Bootstrap
 $theme-colors: (
@@ -17,10 +17,15 @@ $theme-colors: (
 
 // Styles supplémentaires ou personnalisations
 body {
-  background-color: $background;
+  background-image: url('/background_image.png');
+  background-size: cover; /* Assure que l'image couvre tout le body */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-position: center center; /* Centre l'image */
+  background-attachment: fixed; /* Optionnel : pour que l'image de fond reste fixe lors du défilement */
   color: $dark;
   font-family: 'Arial', sans-serif;
-}
+  backdrop-filter: blur(2px);
+  }
 
 a {
   color: $primary;
@@ -46,6 +51,7 @@ nav {
 footer {
   background-color: $dark;
   color: $light;
+  backdrop-filter: blur(2px);
 }
 .logo-responsive {
   width: 100%;
@@ -76,4 +82,36 @@ footer {
     max-width: 60px;
   }
 }
+/*
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #000; // Ajuste cette couleur selon tes besoins
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/background_image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  filter: blur(10px); // Ajuste le niveau de flou selon tes besoins 
+  z-index: -1; // Place l'image derrière le contenu
+}
+
+// Pour s'assurer que le contenu est visible au-dessus du fond flou 
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+*/
