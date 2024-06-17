@@ -1,15 +1,19 @@
 
-<button (click) = "afficherApplis('90','0','0', 'Metacritic')" class="btn btn-primary  btn-filter"> Les classiques</button>
-<button (click) = "afficherApplis('90','0','0', 'Savings')" class="btn btn-primary  btn-filter">Meilleur promos</button>
-<button (click) = "afficherApplis('90','10','0', 'Metacritic')" class="btn btn-primary  btn-filter">Jeux à -10 euros</button>
-<button (click) = "afficherApplis('90','20','0', 'Matecritic')" class="btn btn-primary  btn-filter">Jeux à -20 euros</button>
-<button (click) = "afficherApplis('90','0','0', 'Release')" class="btn btn-primary  btn-filter">Jeux récents</button>
-<button (click) = "afficherApplis('90','0','30', 'Metacritic')" class="btn btn-primary btn-filter">Jeux à +30 euros</button>
-
+<section class="button-section py-3">
+    <div class="container d-flex justify-content-center flex-wrap">
+        <button (click) = "afficherApplis('90','50','0', 'Metacritic', 'Les classiques')" class="btn btn-primary  btn-filter mx-2 my-2"> Les classiques</button>
+        <button (click) = "afficherApplis('90','50','0', 'Savings', 'Meilleur Promos')" class="btn btn-primary  btn-filter mx-2 my-2">Meilleur promos</button>
+        <button (click) = "afficherApplis('90','10','0', 'Metacritic', 'Jeux à + de 10 euros')" class="btn btn-primary  btn-filter mx-2 my-2">Jeux à -10 euros</button>
+        <button (click) = "afficherApplis('90','20','0', 'Metacritic', 'Jeux à - de 20 euros')" class="btn btn-primary  btn-filter mx-2 my-2">Jeux à -20 euros</button>
+        <button (click) = "afficherApplis('90','50','0', 'Release', 'Jeux récents')" class="btn btn-primary  btn-filter mx-2 my-2">Jeux récents</button>
+        <button (click) = "afficherApplis('90','50','30', 'Metacritic', 'Jeux à + de 30 euros')" class="btn btn-primary btn-filter mx-2 my-2">Jeux à +30 euros</button>
+    </div>
+</section>
+<div [innerHTML]="paragraphe" class="container px-4 px-lg-5 mt-5"></div>
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5" *ngFor="let jeu of applis">
+        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+            <div class="col mb-5" *ngFor="let jeu of applis; let i = index" [ngStyle]="{'animation-delay': (i * 0.1) + 's'}">
                 <div class="card h-100">
                     <!-- Product image-->
                     <img class="card-img-top" src="{{jeu.thumb.substring(0,67)}}{{jeu.steamAppID}}/header.jpg" alt="..." />
@@ -19,7 +23,13 @@
                             <!-- Product name-->
                             <h5 class="fw-bolder">{{jeu.title}}</h5>
                             <!-- Product price-->
-                            <p>{{jeu.salePrice}} €</p>
+                            <p *ngIf="jeu.normalPrice === jeu.salePrice">{{ jeu.salePrice }}€</p>
+                            <p *ngIf="jeu.normalPrice !== jeu.salePrice">
+                              <span class="text-muted text-decoration-line-through">{{ jeu.normalPrice }}€</span> {{ jeu.salePrice }}€
+                            </p>
+                            <!-- <p>{{jeu.normalPrice}} €</p> -->
+                            <!-- <p><s> {{jeu.normalPrice}} </s> {{jeu.salePrice}} € </p> -->
+                            
                         </div>
                     </div>
                     <!-- Product actions-->

@@ -1,3 +1,129 @@
-.btn-filter{
-      background-color: brown;
+@import 'styles.scss'; // Importation correcte du styles.scss
+
+// Animation pour l'apparition des cartes et des boutons
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Section des boutons
+.button-section {
+  background-color: $background;
+  color: #e9ecef;
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; // Ajout d'un espace entre les boutons
+  }
+}
+
+// Boutons
+.btn-filter {
+  margin: 10px;
+  font-size: 1.1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+  animation: fadeInUp 0.5s ease-in-out;
+  animation-fill-mode: both; // Assure que l'animation reste appliquée après son exécution
+
+  &.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    color: white;
+
+    &:hover {
+      background-color: darken($primary, 10%);
+      border-color: darken($primary, 15%);
+    }
+  }
+
+  &.btn-outline-dark {
+    border-color: $dark;
+    color: $dark;
+
+    &:hover {
+      background-color: $dark;
+      color: $light;
+    }
+  }
+}
+
+// Ajout de délais d'animation progressifs aux boutons
+@for $i from 1 through 6 {
+  .btn-filter:nth-child(#{$i}) {
+    animation-delay: #{0.1 * $i}s;
+  }
+}
+
+// Carte
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: fadeInUp 0.5s ease-in-out;
+  animation-fill-mode: both; // Assure que l'animation reste appliquée après son exécution
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-img-top {
+    width: 100%; // S'assure que l'image occupe toute la largeur de la carte
+    min-width: 200px; // Définit une largeur minimale pour l'image
+    height: auto; // Maintient le ratio d'aspect de l'image
+    object-fit: cover; // Assure que l'image couvre bien son conteneur
+  }
+
+  .card-body {
+    .fw-bolder {
+      font-size: 1.25em;
+      margin-bottom: 10px;
+      color: $primary;
+    }
+
+    p {
+      font-size: 1em;
+      color: $dark;
+    }
+  }
+
+  .card-footer {
+    background-color: transparent;
+    border-top: 1px solid #e9ecef;
+
+    .btn {
+      font-size: 0.9em;
+      padding: 10px 20px;
+    }
+  }
+}
+
+// Section
+section {
+  padding: 50px 0;
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .row {
+    .col {
+      margin-bottom: 30px;
+      animation: fadeInUp 0.5s ease-in-out;
+      animation-fill-mode: both; // Assure que l'animation reste appliquée après son exécution
+    }
+  }
 }

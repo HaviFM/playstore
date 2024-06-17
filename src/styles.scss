@@ -1,7 +1,8 @@
 // Variables de couleur pour le thème
 $primary: #b52e31; // Rouge Angular
 $dark: #000; // Noir
-$light: #fff; // Blanc
+$background: #b7b7b7;
+$light:#6a6a6a;
 
 // Personnalisation des variables Bootstrap
 $theme-colors: (
@@ -16,7 +17,7 @@ $theme-colors: (
 
 // Styles supplémentaires ou personnalisations
 body {
-  background-color: $light;
+  background-color: $background;
   color: $dark;
   font-family: 'Arial', sans-serif;
 }

@@ -9,6 +9,7 @@ export const routes: Routes = [
 
      {path: "jeux", component: ApplicationComponent},
      {path: '', component: AccueilComponent},
-     {path: "recherche", component: RechercheComponent},
+     {path: "recherche/:title", component: RechercheComponent},
+
      
 ];

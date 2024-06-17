@@ -7,7 +7,6 @@ import { Observable, map } from 'rxjs';
 })
 export class ServiceService {
 
-  //constructor(){ }
 
   http: HttpClient = inject(HttpClient);
   private UrlApplis: string = 'https://www.cheapshark.com/api/1.0/deals?storeID=1'; 
@@ -15,7 +14,7 @@ export class ServiceService {
 
 
   getApplis(steamRatingPercent: string, upperPrice: string, lowerPrice: string, sortBy : string):Observable<any>{
-    return this.http.get(`${this.UrlApplis}&steamRating=${steamRatingPercent}&upperPrice${upperPrice}&lowerPrice=${lowerPrice}&sortBy=${sortBy}`).pipe(map(
+    return this.http.get(`${this.UrlApplis}&steamRating=${steamRatingPercent}&upperPrice=${upperPrice}&lowerPrice=${lowerPrice}&sortBy=${sortBy}`).pipe(map(
       (data: any) =>{
         return data;
       }
@@ -23,11 +22,11 @@ export class ServiceService {
   }
 
 
-  getRecherche(title: any):Observable<any>{
-    return this.http.get(`${this.UrlApplis}&${title}`).pipe(map(
+  getRecherche(title: string):Observable<any>{
+    console.log(`${this.UrlApplis}&title=${title}`);
+    return this.http.get(`${this.UrlApplis}&title=${title}`).pipe(map(
       (data: any) =>{
         return data;
-        console.log(data);
       }
     ));
   }

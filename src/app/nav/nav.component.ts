@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, Routes } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterModule, Routes } from '@angular/router';
 import { ServiceService } from '../service.service';
 import { Injectable, inject } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-nav',
@@ -14,11 +15,10 @@ export class NavComponent {
 
   service: ServiceService = inject(ServiceService);
   applis: any;
+  private router = inject(Router);
 
   rechercher(title: any){
-    this.service.getRecherche(title).subscribe(data => {
-      this.applis = data;
-      console.log(data);
-    })
+    
+      this.router.navigate([`/recherche/${title}`]);
   }
 }

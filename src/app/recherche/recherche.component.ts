@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject,  OnInit } from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
 import { JsonPipe, CommonModule } from '@angular/common';
 import { ServiceService } from '../service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -15,13 +16,26 @@ import { ServiceService } from '../service.service';
 })
 export class RechercheComponent {
 
+  private route = inject(ActivatedRoute);
+
   service: ServiceService = inject(ServiceService);
   applis: any;
+  title: string = "" ;
+  paragraphe: string = "test";
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+       this.title = params['title'];
+       this.afficherRecherche(this.title);
+    });
+  }
+
 
   afficherRecherche(title: string){
     this.service.getRecherche(title).subscribe(data => {
+      console.log(data);
       this.applis = data;
-      //console.log(data);
+      this.paragraphe = title;
   }, 
   error => {
     console.error('There was an error!', error);

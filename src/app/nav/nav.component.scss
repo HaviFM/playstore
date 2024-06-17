@@ -1,0 +1,79 @@
+@import 'styles.scss'; // Assurez-vous que les variables globales sont importées
+
+.navbar {
+  background: linear-gradient(90deg, $dark 0%, lighten($dark, 10%) 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(90deg, darken($dark, 5%) 0%, darken(lighten($dark, 10%), 5%) 100%);
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+
+    .navbar-logo {
+      width: 70px;
+      margin-left: 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+      }
+    }
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+
+    &:hover {
+      color: $primary;
+      text-shadow: 0 0 5px rgba($primary, 0.7);
+    }
+  }
+
+  .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    &:focus {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px rgba($primary, 0.5);
+      border: none;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7); // Couleur du placeholder
+      opacity: 1; // Pour certains navigateurs, assurez-vous que l'opacité est à 1
+    }
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba($primary, 0.5);
+    }
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  .form-inline {
+    .form-control {
+      width: 200px;
+      transition: width 0.3s ease;
+      
+      &:focus {
+        width: 300px;
+      }
+    }
+  }
+}
